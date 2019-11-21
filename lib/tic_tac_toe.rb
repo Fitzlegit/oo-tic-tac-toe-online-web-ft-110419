@@ -2,8 +2,9 @@ require 'pry'
 
 class TicTacToe
 
+  attr_accessor :board
 
-  def initialize
+  def initialize()
     @board = Array.new(9, " ")
   end
 
@@ -18,9 +19,21 @@ class TicTacToe
       [2, 5, 8],
       # Diagonal win combinations
       [0, 4, 8],
-      [2, 4, 6]
+      [6, 4, 2]
       ]
-
+   
+   def play
+    while !over? do
+      turn
+    end
+    if won?
+      return puts "Congratulations #{winner}!"
+    elsif draw?
+      return puts "Cat's Game!"
+    end
+   end
+      
+      
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "--------------"
@@ -40,7 +53,7 @@ class TicTacToe
   def position_taken?(index)
     if @board[index].include?(" ")
       false
-    elsif @board[index] = "X" || @board[index] = "O"
+    elsif @board[index] == "X" || @board[index] == "O"
       true
     end
   end
@@ -101,15 +114,11 @@ class TicTacToe
    end
 
    def draw?
-     !(won? || !full?)
+     !won? && @board.all?{|token| token == "X" || token == "O"}
    end
 
    def over?
-     if full? || won?
-       true
-     else
-       false
-     end
+    won? || draw?
    end
 
    def winner
@@ -120,9 +129,5 @@ class TicTacToe
      else
        nil
      end
-   end
-
-   def play
-    turn
    end
 end
