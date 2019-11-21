@@ -88,13 +88,11 @@ class TicTacToe
     index = input_to_index(gets)
     current_player #selects current player
 
-    if valid_move?(index)
-      move(index)
-      display_board
-    else
-      "please input a valid position"
-      index = input_to_index(gets)
+    if !valid_move?(index)
+      turn
     end
+    move(index, token)
+    display_board
   end
 
   def won?
