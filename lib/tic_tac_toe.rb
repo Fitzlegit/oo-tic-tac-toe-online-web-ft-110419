@@ -89,7 +89,6 @@ class TicTacToe
     #input = gets.to_i
     index = input_to_index(gets)
     current_player #selects current player
-    binding.pry
 
     if valid_move?(index) == true
       move(index)
