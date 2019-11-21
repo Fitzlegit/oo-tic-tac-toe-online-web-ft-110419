@@ -110,11 +110,11 @@ class TicTacToe
   end
 
    def full?
-    self.all? {|token| token == "X" || token == "O"}
+    @board.all? {|token| token == "X" || token == "O"}
    end
 
    def draw?
-     !won? && self.all?{|token| token == "X" || token == "O"}
+     !won? && @board.all?{|token| token == "X" || token == "O"}
    end
 
    def over?
