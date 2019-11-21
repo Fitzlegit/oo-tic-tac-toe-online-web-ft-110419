@@ -87,15 +87,16 @@ class TicTacToe
     display_board
     puts "please input a position between 1-9"
     #input = gets.to_i
-    #index = input_to_index(gets)
+    index = input_to_index(gets)
     current_player #selects current player
+    binding.pry
 
-    if valid_move?(input_to_index(gets)) == true
-      move(input_to_index(gets))
+    if valid_move?(index) == true
+      move(index)
       display_board
     else
-      puts "please input a valid position"
-      index = input_to_index(gets)
+      return "please input a valid position"
+      #index = input_to_index(gets)
     end
   end
 
