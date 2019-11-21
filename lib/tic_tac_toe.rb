@@ -86,7 +86,6 @@ class TicTacToe
   def turn
     puts "please input a position between 1-9"
     index = input_to_index(gets)
-    current_player #selects current player
 
     if valid_move?(index)
       move(index, current_player)
