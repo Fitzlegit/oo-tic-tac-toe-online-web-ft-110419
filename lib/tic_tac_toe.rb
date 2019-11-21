@@ -93,8 +93,8 @@ class TicTacToe
       move(index)
       display_board
     else
-      return "please input a valid position"
-      #index = input_to_index(gets)
+      "please input a valid position"
+      index = input_to_index(gets)
     end
   end
 
