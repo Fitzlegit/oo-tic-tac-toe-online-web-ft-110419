@@ -71,7 +71,7 @@ class TicTacToe
 
   def turn_count
     count = 0
-    @board.each do |position|
+    self.each do |position|
       if position == "X" || position == "O"
         count += 1
       end
@@ -110,11 +110,11 @@ class TicTacToe
   end
 
    def full?
-    @board.all? {|token| token == "X" || token == "O"}
+    self.all? {|token| token == "X" || token == "O"}
    end
 
    def draw?
-     !won? && @board.all?{|token| token == "X" || token == "O"}
+     !won? && self.all?{|token| token == "X" || token == "O"}
    end
 
    def over?
