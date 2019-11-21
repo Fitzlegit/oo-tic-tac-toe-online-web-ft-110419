@@ -71,7 +71,7 @@ class TicTacToe
 
   def turn_count
     count = 0
-    self.each do |position|
+    @board.each do |position|
       if position == "X" || position == "O"
         count += 1
       end
