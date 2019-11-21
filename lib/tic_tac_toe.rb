@@ -84,10 +84,12 @@ class TicTacToe
   end
 
   def turn
+    display_board
     puts "please input a position between 1-9"
-    input = gets.to_i
+    #input = gets.to_i
+    index = input_to_index(gets)
     current_player #selects current player
-    index = input_to_index(input)
+    
 
     if valid_move?(index) == true
       move(index)
