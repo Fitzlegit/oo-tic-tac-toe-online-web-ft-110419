@@ -89,7 +89,7 @@ class TicTacToe
     current_player #selects current player
 
     if valid_move?(index)
-      move(index)
+      move(index, current_player)
       display_board
     else
       "please input a valid position"
