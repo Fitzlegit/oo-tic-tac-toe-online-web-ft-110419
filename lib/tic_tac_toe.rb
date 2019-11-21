@@ -96,7 +96,7 @@ class TicTacToe
       display_board
     else
       puts "please input a valid position"
-      input = gets.to_i
+      index = input_to_index(gets)
     end
   end
 
